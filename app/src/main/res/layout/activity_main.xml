@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="380dp"
+        android:layout_height="693dp"
+        android:layout_column="2"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Spinner
+            android:id="@+id/numberOfPeople"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_row = "0"
+            app:layout_columnSpan="2"/>
+
+        <EditText
+            android:id="@+id/userInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/type_in_an_amount"
+            android:inputType="numberDecimal"
+            android:maxLength="6"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_columnSpan="2"
+            app:layout_column = "0"
+            app:layout_row = "1"/>
+
+        <SeekBar
+            android:id="@+id/userSeekBar"
+            android:layout_width="327dp"
+            android:layout_height="wrap_content"
+            app:layout_column="1"
+            app:layout_row="2"
+            app:layout_rowSpan="2" />
+
+        <TextView
+            android:id="@+id/percentText"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="@string/percent"
+            android:textSize="20sp"
+            app:layout_column="0"
+            app:layout_row="2" />
+
+        <TextView
+            android:id="@+id/tipText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:text="@string/tip"
+            android:textSize="20sp"
+            app:layout_column="0"
+            app:layout_row="3" />
+
+        <TextView
+            android:id="@+id/totalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:text="@string/total"
+            android:textSize="20sp"
+            app:layout_column="0"
+            app:layout_row="4" />
+
+        <TextView
+            android:id="@+id/perPersonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:text="Per Person"
+            android:textSize="20sp"
+            app:layout_column="0"
+            app:layout_row="5" />
+
+        <TextView
+            android:id="@+id/tipAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:background="#FEF7ACEA"
+            android:text="@string/_0_00"
+            android:textSize="20sp"
+            app:layout_column="1"
+            app:layout_gravity="center_horizontal"
+            app:layout_row="3" />
+
+        <TextView
+            android:id="@+id/totalAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:background="#FEF7ACEA"
+            android:text="@string/_0_00"
+            android:textSize="20sp"
+            app:layout_column="1"
+            app:layout_gravity="center_horizontal"
+            app:layout_row="4" />
+
+        <TextView
+            android:id="@+id/perPersonAmount"
+            android:layout_width="343dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:background="#FEF7ACEA"
+            android:text="$0.00"
+            android:textSize="20sp"
+            app:layout_column="1"
+            app:layout_columnSpan="2"
+            app:layout_row="5" />
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:onClick="resetValues"
+            android:text="@string/reset"
+            android:visibility="visible"
+            app:layout_column="1"
+            app:layout_row="6"
+            tools:ignore="OnClick" />
+
+        <TextView
+            android:id="@+id/radioTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/roundPrompt"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_column="0"
+            app:layout_columnSpan="3"
+            app:layout_row="7" />
+
+        <RadioGroup
+            android:id="@+id/RadioChoices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_column="1"
+            app:layout_columnSpan="3"
+            app:layout_row="8"
+            android:layout_margin="5dp">
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/option1"
+                android:layout_margin="10dp"
+                android:onClick="choosingRoundingOption"/>
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/option2"
+                android:layout_margin="10dp"
+                android:onClick="choosingRoundingOption"/>
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/option3"
+                android:layout_margin="10dp"
+                android:onClick="choosingRoundingOption"/>
+        </RadioGroup>
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/Shortcuts"
+            android:layout_width="334dp"
+            android:layout_height="422dp"
+            app:columnOrderPreserved="false"
+            app:layout_column="1"
+            app:layout_row="9"
+            app:layout_rowSpan="2">
+
+            <TextView
+                android:id="@+id/shortcutsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/shortcuts"
+                android:textSize="20sp"
+                app:layout_row="0" />
+
+            <Button
+                android:id="@+id/fivePercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:onClick="fiveP"
+                android:text="@string/_5"
+                app:layout_column="0"
+                app:layout_row="1" />
+
+            <Button
+                android:id="@+id/tenPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:onClick="tenP"
+                android:text="@string/_10"
+                app:layout_column="1"
+                app:layout_row="1" />
+
+            <Button
+                android:id="@+id/fifteenPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:onClick="fifteenP"
+                android:text="@string/_15"
+                app:layout_column="0"
+                app:layout_row="2" />
+
+            <Button
+                android:id="@+id/twentyPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:onClick="twentyP"
+                android:text="@string/_20"
+                app:layout_column="1"
+                app:layout_row="2" />
+        </androidx.gridlayout.widget.GridLayout>
+
+    </androidx.gridlayout.widget.GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
